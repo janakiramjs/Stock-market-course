@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="te">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Complete Stock Market Course – Telugu | Janakiram</title>
+<title>Complete Stock Market Course | Janakiram</title>
 <link href="https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;600;700;900&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -307,12 +307,10 @@ section { position: relative; z-index: 1; }
 }
 .feat-desc { font-size: 15px; color: var(--muted); line-height: 1.6; }
 
-/* ─── PRICING ─── */
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 24px;
-  align-items: start;
+/* ─── PRICING — SINGLE CENTRED CARD ─── */
+.pricing-center {
+  display: flex;
+  justify-content: center;
 }
 .price-card {
   background: var(--card);
@@ -320,11 +318,14 @@ section { position: relative; z-index: 1; }
   padding: 40px 36px;
   position: relative;
   transition: transform 0.25s;
+  width: 100%;
+  max-width: 480px;
 }
 .price-card:hover { transform: translateY(-4px); }
 .price-card.featured {
   border-color: var(--green);
   background: linear-gradient(160deg, #0c1e16 0%, #0c1622 100%);
+  box-shadow: 0 0 60px rgba(0,230,136,0.12);
 }
 .price-badge {
   position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
@@ -376,17 +377,6 @@ section { position: relative; z-index: 1; }
   transition: opacity 0.2s, transform 0.2s;
 }
 .btn-register:hover { opacity: 0.88; transform: translateY(-1px); }
-.btn-register-outline {
-  display: block; width: 100%; text-align: center;
-  border: 1px solid var(--green);
-  background: transparent;
-  color: var(--green); font-family: 'Rajdhani', sans-serif;
-  font-weight: 700; font-size: 17px; letter-spacing: 2px;
-  text-transform: uppercase; padding: 16px;
-  text-decoration: none; cursor: pointer;
-  transition: background 0.2s;
-}
-.btn-register-outline:hover { background: rgba(0,230,136,0.08); }
 
 /* ─── INSTRUCTOR ─── */
 .instructor-wrap {
@@ -466,10 +456,9 @@ section { position: relative; z-index: 1; }
   padding: 80px 24px;
 }
 .cta-banner .section-title { margin-bottom: 12px; }
-.cta-telugu {
-  font-family: 'Noto Sans Telugu', sans-serif;
-  font-size: 26px; color: var(--green);
-  margin-bottom: 36px; opacity: 0.85;
+.cta-sub {
+  font-size: 20px; color: var(--muted);
+  margin-bottom: 36px; letter-spacing: 1px;
 }
 .cta-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
 
@@ -539,8 +528,6 @@ footer {
 <div class="blob1"></div>
 <div class="blob2"></div>
 
-
-
 <!-- NAV -->
 <nav>
   <div class="nav-brand">JANA<span>KIRAM</span> TRADING</div>
@@ -594,7 +581,7 @@ footer {
   <div class="section-wrap">
     <div class="section-tag">Why This Course</div>
     <div class="section-title">What You <span>Get</span></div>
-    <div class="section-desc">ఈ course లో మీరు theory నుండి live trading వరకు అన్నీ నేర్చుకుంటారు.</div>
+    <div class="section-desc">From market basics to live trade execution — everything covered in one structured program.</div>
     <div class="features-grid">
       <div class="feat-card">
         <div class="feat-icon">📊</div>
@@ -604,12 +591,12 @@ footer {
       <div class="feat-card">
         <div class="feat-icon">📈</div>
         <div class="feat-title">Technical Analysis</div>
-        <div class="feat-desc">Charts, candlesticks, zigzag, Fractal Chaos Band, TD SEQUENTIAL – all explained in Telugu with TradingView demos.</div>
+        <div class="feat-desc">Charts, candlesticks, zigzag, Fractal Chaos Band, TD Sequential – all explained in Telugu with TradingView demos.</div>
       </div>
       <div class="feat-card">
         <div class="feat-icon">🎯</div>
         <div class="feat-title">Options Trading</div>
-        <div class="feat-desc">Calls, Puts, Greeks, IV, premium decay – options strategies like Straddle, Iron Condor, Spreads.</div>
+        <div class="feat-desc">Calls, Puts, Greeks, IV, premium decay – options strategies like Straddle, Iron Condor, and Spreads.</div>
       </div>
       <div class="feat-card">
         <div class="feat-icon">🔴</div>
@@ -619,12 +606,12 @@ footer {
       <div class="feat-card">
         <div class="feat-icon">👤</div>
         <div class="feat-title">1-to-1 Mentoring</div>
-        <div class="feat-desc">Private sessions available. Get personalised trade review, strategy feedback, and direct doubt clearing.</div>
+        <div class="feat-desc">Fully private sessions. Get personalised trade review, strategy feedback, and direct doubt clearing at your own pace.</div>
       </div>
       <div class="feat-card">
         <div class="feat-icon">💬</div>
         <div class="feat-title">WhatsApp Support</div>
-        <div class="feat-desc">Dedicated WhatsApp group for all enrolled students. Doubts answered within 24 hours.</div>
+        <div class="feat-desc">Priority WhatsApp access. Doubts answered within 24 hours, trade reviews and custom strategy building included.</div>
       </div>
     </div>
   </div>
@@ -706,62 +693,31 @@ footer {
   </div>
 </section>
 
-<!-- PRICING -->
+<!-- PRICING — 1-to-1 ONLY -->
 <section id="pricing">
   <div class="section-wrap">
-    <div class="section-tag">Transparent Pricing</div>
-    <div class="section-title">Choose Your <span>Plan</span></div>
-    <div class="section-desc">EMI available in 2 instalments via UPI or bank transfer.</div>
-    <div class="pricing-grid">
+    <div class="section-tag">Private Mentoring</div>
+    <div class="section-title">Your Exclusive <span>Plan</span></div>
+    <div class="section-desc">100% personalised sessions at your schedule. EMI available in 2 instalments via UPI or bank transfer.</div>
+    <div class="pricing-center">
 
-      <!-- Early Bird -->
       <div class="price-card featured">
-        <div class="price-badge">🔥 Early Bird — First 5 Seats Only</div>
-        <div class="price-label">Group Class</div>
-        <div class="price-name">Early Bird</div>
-        <div class="price-amount"><sub>₹</sub>6,999</div>
-        <div class="price-orig">Regular ₹8,999</div>
-        <ul class="price-features">
-          <li>16 Live Sessions (Sat & Sun)</li>
-          <li>Course Notes & Study Material</li>
-          <li>WhatsApp Support Group</li>
-          <li>Doubt Clearing Sessions</li>
-          <li>Course Completion Certificate</li>
-        </ul>
-        <a href="https://wa.me/918328396964?text=Hello%20Sir%2C%20I%20want%20to%20register%20for%20the%20Early%20Bird%20Group%20Class%20at%20%E2%82%B96%2C999.%20Please%20confirm%20my%20seat." class="btn-register" target="_blank">📲 Book Early Bird Seat</a>
-      </div>
-
-      <!-- Group -->
-      <div class="price-card">
-        <div class="price-label">Group Class</div>
-        <div class="price-name">Standard</div>
-        <div class="price-amount"><sub>₹</sub>8,999</div>
-        <div class="price-orig">&nbsp;</div>
-        <ul class="price-features">
-          <li>16 Live Sessions (Sat & Sun)</li>
-          <li>Course Notes & Study Material</li>
-          <li>WhatsApp Support Group</li>
-          <li>Doubt Clearing Sessions</li>
-          <li>Course Completion Certificate</li>
-        </ul>
-        <a href="https://wa.me/918328396964?text=Hello%20Sir%2C%20I%20want%20to%20register%20for%20the%20Group%20Class%20at%20%E2%82%B98%2C999.%20Please%20share%20payment%20details." class="btn-register-outline" target="_blank">📲 Register for Group</a>
-      </div>
-
-      <!-- 1-to-1 -->
-      <div class="price-card">
+        <div class="price-badge">⭐ Most Comprehensive — Limited Seats</div>
         <div class="price-label">Private Mentoring</div>
         <div class="price-name">1-to-1</div>
         <div class="price-amount"><sub>₹</sub>24,999</div>
         <div class="price-orig">&nbsp;</div>
         <ul class="price-features">
-          <li>All Group Class Benefits</li>
-          <li>Personalised Session Timing</li>
+          <li>16 Live Sessions (Flexible Timing)</li>
+          <li>All Course Notes & Study Material</li>
+          <li>Personalised Session Scheduling</li>
           <li>Individual Trade Review</li>
           <li>Custom Strategy Building</li>
           <li>Priority WhatsApp Support</li>
-          <li>EMI in 2 Instalments</li>
+          <li>Course Completion Certificate</li>
+          <li>EMI Available — 2 Easy Instalments</li>
         </ul>
-        <a href="https://wa.me/918328396964?text=Hello%20Sir%2C%20I%20am%20interested%20in%20the%201-to-1%20Private%20Mentoring%20at%20%E2%82%B924%2C999.%20Please%20share%20details." class="btn-register-outline" target="_blank">📲 Enquire 1-to-1</a>
+        <a href="https://wa.me/918328396964?text=Hello%20Sir%2C%20I%20am%20interested%20in%20the%201-to-1%20Private%20Mentoring%20at%20%E2%82%B924%2C999.%20Please%20share%20details." class="btn-register" target="_blank">📲 Enquire for 1-to-1 Now</a>
       </div>
 
     </div>
@@ -776,8 +732,8 @@ footer {
         <div class="section-tag">Your Mentor</div>
         <div class="section-title">About <span>Janakiram</span></div>
         <div class="instructor-bio">
-          10+ సంవత్సరాల live market trading experience తో, Janakiram sir equity, derivatives, commodities మరియు forex markets లో extensive knowledge కలిగి ఉన్నారు.<br><br>
-          SEBI-registered broadcaster గా, ఆయన తన YouTube channel లో Telugu లో లక్షలాది మంది retail investors కి market education అందిస్తున్నారు. TradingView మరియు Zerodha platforms తో live trade demos ఇస్తూ, complex concepts ని simple గా explain చేస్తారు.
+          With over 10 years of live market trading experience, Janakiram brings deep expertise across equity, derivatives, commodities, and forex markets.<br><br>
+          As a SEBI-registered broadcaster, he delivers market education to lakhs of retail investors on his Telugu YouTube channel. Using live TradingView and Zerodha demos, he simplifies complex concepts into clear, actionable learning — making him one of the most trusted voices in Telugu-language stock market education.
         </div>
         <div class="creds">
           <div class="cred"><span class="cred-icon">✅</span> 10+ Yrs Live Trading</div>
@@ -805,44 +761,44 @@ footer {
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          Stock market గురించి ముందే తెలిసి ఉండాలా? <span class="faq-arrow">▼</span>
+          Do I need prior stock market knowledge? <span class="faq-arrow">▼</span>
         </button>
-        <div class="faq-a">లేదు. ఈ course పూర్తిగా beginners కోసం design చేయబడింది. Week 1 లోనే basics నుండి start అవుతాం.</div>
+        <div class="faq-a">Not at all. This course is designed from scratch for complete beginners. We start with the very basics in Week 1 and build up progressively.</div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          Classes ఏ platform లో జరుగుతాయి? <span class="faq-arrow">▼</span>
+          What platform will the sessions be held on? <span class="faq-arrow">▼</span>
         </button>
-        <div class="faq-a">Zoom లేదా Google Meet ద్వారా online జరుగుతాయి. Link registration తర్వాత WhatsApp లో share చేయబడుతుంది.</div>
+        <div class="faq-a">Sessions are conducted online via Zoom or Google Meet. The link will be shared on WhatsApp after registration.</div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          Classes miss అయితే recordings దొరుకుతాయా? <span class="faq-arrow">▼</span>
+          Will recordings be available if I miss a session? <span class="faq-arrow">▼</span>
         </button>
-        <div class="faq-a">అవును. Every session recording students కి share చేయబడుతుంది. మీరు తర్వాత చూడవచ్చు.</div>
+        <div class="faq-a">Yes. Every session recording is shared with enrolled students so you can revisit it at your convenience.</div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          Demat account తెరవడం అవసరమా? <span class="faq-arrow">▼</span>
+          Is a Demat account required? <span class="faq-arrow">▼</span>
         </button>
-        <div class="faq-a">Live trade demos చూడడానికి Demat account అవసరం లేదు. కానీ Week 7-8 లో paper trading practice కోసం Zerodha account ఉంటే better.</div>
+        <div class="faq-a">You do not need a Demat account to watch live trade demos. However, having a Zerodha account for Week 7–8 paper trading practice is recommended.</div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          Payment ఎలా చేయాలి? <span class="faq-arrow">▼</span>
+          How do I make payment? <span class="faq-arrow">▼</span>
         </button>
-        <div class="faq-a">UPI, Bank Transfer, లేదా Google Pay ద్వారా payment చేయవచ్చు. 1-to-1 plan కి EMI (2 instalments) కూడా available.</div>
+        <div class="faq-a">Payment can be made via UPI, Bank Transfer, or Google Pay. The 1-to-1 plan also supports EMI in 2 instalments.</div>
       </div>
 
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">
-          Course complete చేసిన తర్వాత certificate దొరుకుతుందా? <span class="faq-arrow">▼</span>
+          Will I receive a certificate after course completion? <span class="faq-arrow">▼</span>
         </button>
-        <div class="faq-a">అవును. Course successfully complete చేసిన students కి digital certificate issue చేయబడుతుంది.</div>
+        <div class="faq-a">Yes. A digital course completion certificate is issued to all students who successfully complete the program.</div>
       </div>
 
     </div>
@@ -853,12 +809,12 @@ footer {
 <div class="cta-banner">
   <div class="section-tag">Limited Seats Available</div>
   <div class="section-title" style="margin-bottom:8px;">Ready to Start <span>Trading?</span></div>
-  <div class="cta-telugu">మీ financial future మీ చేతుల్లో ఉంది. ఇప్పుడే join అవ్వండి!</div>
+  <div class="cta-sub">Your financial future is in your hands. Take the first step today.</div>
   <div class="cta-buttons">
-    <a href="https://wa.me/918328396964?text=Hello%20Sir%2C%20I%20am%20interested%20in%20your%20Complete%20Stock%20Market%20Course.%20Please%20share%20registration%20details." class="btn-primary" target="_blank">
+    <a href="https://wa.me/918328396964?text=Hello%20Sir%2C%20I%20am%20interested%20in%20the%201-to-1%20Private%20Mentoring%20at%20%E2%82%B924%2C999.%20Please%20share%20details." class="btn-primary" target="_blank">
       📲 WhatsApp to Join Now
     </a>
-    <a href="#pricing" class="btn-secondary">View Pricing ↑</a>
+    <a href="#pricing" class="btn-secondary">View Plan ↑</a>
   </div>
 </div>
 
