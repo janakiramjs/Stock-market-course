@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Janakiram Trading – Stock Market Education Course</title>
-  <meta name="description" content="Learn stock market trading in Telugu with Janakiram Trading. 8-week structured course covering equity, options, technical analysis. 10+ years experience. Enroll now."/>
+  <meta name="description" content="Learn stock market trading in Telugu with Janakiram Trading. 1-month course, 8 classes every Saturday & Sunday. Equity, options, technical analysis. 10+ years experience. Enroll now."/>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
     :root {
@@ -249,6 +249,81 @@
     .why-card h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 10px; }
     .why-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.65; }
 
+    /* OUTCOMES SECTION */
+    .outcomes-section { background: var(--dark); }
+    .outcomes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-bottom: 56px;
+    }
+    .outcome-card {
+      background: linear-gradient(135deg, var(--dark-3), var(--dark-4));
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 8px;
+      padding: 32px 28px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .outcome-card:hover { transform: translateY(-4px); border-color: rgba(201,168,76,0.5); }
+    .outcome-card::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      transform: scaleX(0);
+      transition: transform 0.3s;
+      transform-origin: left;
+    }
+    .outcome-card:hover::after { transform: scaleX(1); }
+    .outcome-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      color: rgba(201,168,76,0.15);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .outcome-card h3 { font-size: 1.05rem; font-weight: 700; margin-bottom: 10px; color: var(--white); }
+    .outcome-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.65; }
+    .outcome-icon { font-size: 1.8rem; margin-bottom: 14px; }
+
+    /* LIVE SUPPORT BANNER */
+    .live-support-banner {
+      background: linear-gradient(135deg, rgba(46,204,113,0.08), rgba(201,168,76,0.08));
+      border: 1px solid rgba(46,204,113,0.25);
+      border-radius: 8px;
+      padding: 36px 40px;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      max-width: 860px;
+    }
+    .lsb-icon { font-size: 3rem; flex-shrink: 0; }
+    .lsb-body h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+    .lsb-body p { color: var(--muted); font-size: 0.92rem; line-height: 1.7; }
+    .lsb-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(46,204,113,0.15);
+      border: 1px solid rgba(46,204,113,0.3);
+      color: var(--green);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-bottom: 10px;
+    }
+    .lsb-badge::before { content:''; width:7px; height:7px; border-radius:50%; background:var(--green); animation: pulse 1.5s ease-in-out infinite; }
+
     /* CURRICULUM */
     .curriculum-list {
       display: flex; flex-direction: column; gap: 2px;
@@ -273,8 +348,61 @@
     .cur-body h3 { font-size: 1rem; font-weight: 600; margin-bottom: 5px; }
     .cur-body p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
 
+    /* JOURNEY SECTION */
+    .journey-section { background: var(--dark-2); }
+    .journey-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      max-width: 700px;
+      position: relative;
+    }
+    .journey-steps::before {
+      content: '';
+      position: absolute;
+      left: 28px; top: 40px; bottom: 40px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold-dim), var(--gold), var(--gold-dim));
+      opacity: 0.4;
+    }
+    .journey-step {
+      display: flex;
+      gap: 28px;
+      align-items: flex-start;
+      padding: 28px 0;
+    }
+    .journey-dot {
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      background: var(--dark-3);
+      border: 2px solid rgba(201,168,76,0.4);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+    .journey-step.active .journey-dot {
+      background: rgba(201,168,76,0.15);
+      border-color: var(--gold);
+    }
+    .journey-body h3 { font-size: 1rem; font-weight: 700; margin-bottom: 5px; }
+    .journey-body p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
+    .journey-tag {
+      display: inline-block;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 2px;
+      margin-bottom: 6px;
+    }
+    .tag-during { background: rgba(201,168,76,0.12); color: var(--gold); }
+    .tag-after { background: rgba(46,204,113,0.12); color: var(--green); }
+
     /* PRICING */
-    .pricing-section { background: var(--dark-2); }
+    .pricing-section { background: var(--dark); }
     .pricing-card {
       max-width: 500px;
       background: var(--dark-3);
@@ -340,6 +468,14 @@
       font-size: 1rem;
       flex-shrink: 0;
     }
+    .features-list li.highlight {
+      color: var(--white);
+      font-weight: 600;
+    }
+    .features-list li.highlight::before {
+      content: '🔥';
+      font-size: 0.9rem;
+    }
 
     /* ABOUT */
     .about-inner {
@@ -348,9 +484,7 @@
       gap: 80px;
       align-items: center;
     }
-    .about-visual {
-      position: relative;
-    }
+    .about-visual { position: relative; }
     .about-card-main {
       background: var(--dark-3);
       border: 1px solid rgba(201,168,76,0.2);
@@ -391,9 +525,7 @@
     }
     .about-text .section-sub { margin-bottom: 32px; }
     .about-points { display: flex; flex-direction: column; gap: 18px; }
-    .about-point {
-      display: flex; gap: 16px; align-items: flex-start;
-    }
+    .about-point { display: flex; gap: 16px; align-items: flex-start; }
     .about-point-icon {
       width: 40px; height: 40px;
       background: rgba(201,168,76,0.1);
@@ -463,6 +595,7 @@
       .stats-bar { grid-template-columns: repeat(2,1fr); }
       .about-inner { grid-template-columns: 1fr; gap: 48px; }
       .pricing-card { padding: 36px 28px; }
+      .live-support-banner { flex-direction: column; gap: 16px; }
       footer { flex-direction: column; text-align: center; }
       .footer-disc { text-align: center; }
     }
@@ -477,8 +610,8 @@
 <!-- TICKER -->
 <div class="ticker-bar" aria-hidden="true">
   <div class="ticker-track">
-    <span>📈 NIFTY 50 &nbsp;|&nbsp; NSE &nbsp;|&nbsp; BSE &nbsp;|&nbsp; OPTIONS TRADING &nbsp;|&nbsp; EQUITY MARKETS &nbsp;|&nbsp; NEW BATCH ENROLLING &nbsp;|&nbsp; WEEKEND CLASSES &nbsp;|&nbsp; TELUGU MEDIUM &nbsp;|&nbsp; 10+ YEARS EXPERIENCE &nbsp;|&nbsp; 📊 ENROLL NOW</span>
-    <span>📈 NIFTY 50 &nbsp;|&nbsp; NSE &nbsp;|&nbsp; BSE &nbsp;|&nbsp; OPTIONS TRADING &nbsp;|&nbsp; EQUITY MARKETS &nbsp;|&nbsp; NEW BATCH ENROLLING &nbsp;|&nbsp; WEEKEND CLASSES &nbsp;|&nbsp; TELUGU MEDIUM &nbsp;|&nbsp; 10+ YEARS EXPERIENCE &nbsp;|&nbsp; 📊 ENROLL NOW</span>
+    <span>📈 NIFTY 50 &nbsp;|&nbsp; NSE &nbsp;|&nbsp; BSE &nbsp;|&nbsp; OPTIONS TRADING &nbsp;|&nbsp; EQUITY MARKETS &nbsp;|&nbsp; NEW BATCH ENROLLING &nbsp;|&nbsp; WEEKEND CLASSES &nbsp;|&nbsp; TELUGU MEDIUM &nbsp;|&nbsp; 10+ YEARS EXPERIENCE &nbsp;|&nbsp; BEGINNER TO ADVANCED &nbsp;|&nbsp; LIVE TRADE SUPPORT &nbsp;|&nbsp; 📊 ENROLL NOW</span>
+    <span>📈 NIFTY 50 &nbsp;|&nbsp; NSE &nbsp;|&nbsp; BSE &nbsp;|&nbsp; OPTIONS TRADING &nbsp;|&nbsp; EQUITY MARKETS &nbsp;|&nbsp; NEW BATCH ENROLLING &nbsp;|&nbsp; WEEKEND CLASSES &nbsp;|&nbsp; TELUGU MEDIUM &nbsp;|&nbsp; 10+ YEARS EXPERIENCE &nbsp;|&nbsp; BEGINNER TO ADVANCED &nbsp;|&nbsp; LIVE TRADE SUPPORT &nbsp;|&nbsp; 📊 ENROLL NOW</span>
   </div>
 </div>
 
@@ -493,9 +626,9 @@
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-content">
-    <div class="badge">New Batch Enrolling</div>
+    <div class="badge">New Batch Enrolling — 1 Month · Sat & Sun Only</div>
     <h1>Master the Stock Market<br/>with <em>Structured Learning</em></h1>
-    <p>A complete 8-week educational course covering equity, options, technical analysis, and market practice — taught in Telugu by a 10+ year financial markets educator.</p>
+    <p>A complete 1-month 1-to-1 mentoring program — 8 classes every Saturday & Sunday — taking you from absolute basics to advanced trading. Taught in Telugu, Kannada, Tamil & English by a 10+ year experienced financial markets educator. Live trade support included after course completion.</p>
     <div class="hero-actions">
       <a href="https://wa.me/918328396964?text=Hi%2C%20I%20am%20interested%20in%20enrolling%20in%20the%20Janakiram%20Trading%20Course.%20Please%20share%20more%20details." class="btn-primary" target="_blank" rel="noopener">📲 WhatsApp to Register</a>
       <a href="#curriculum" class="btn-secondary">View Curriculum</a>
@@ -510,12 +643,12 @@
     <div class="stat-label">Years Experience</div>
   </div>
   <div class="stat-item">
-    <span class="stat-num">16</span>
-    <div class="stat-label">Live Sessions</div>
+    <span class="stat-num">8</span>
+    <div class="stat-label">Live Classes</div>
   </div>
   <div class="stat-item">
-    <span class="stat-num">8</span>
-    <div class="stat-label">Weeks Duration</div>
+    <span class="stat-num">1</span>
+    <div class="stat-label">Month Duration</div>
   </div>
   <div class="stat-item">
     <span class="stat-num">1:1</span>
@@ -527,12 +660,12 @@
 <section class="why-section">
   <div class="section-label">Why Choose Us</div>
   <h2 class="section-title">Learn the Markets the <em style="font-style:normal;color:var(--gold)">Right Way</em></h2>
-  <p class="section-sub">Stock market concepts taught in a structured and practical way — from absolute basics to advanced topics, entirely in Telugu medium.</p>
+  <p class="section-sub">From zero to confident trader — structured 1-to-1 mentoring that takes you from market basics to advanced trading strategies, entirely in your language.</p>
   <div class="why-grid">
     <div class="why-card">
       <div class="why-icon">🎓</div>
-      <h3>Structured Curriculum</h3>
-      <p>Every topic is sequenced logically — from market fundamentals to advanced options strategies, building your knowledge step by step.</p>
+      <h3>Beginner to Advanced</h3>
+      <p>No prior knowledge needed. Through 1-to-1 sessions, the course is tailored to take you from market fundamentals all the way to advanced trading strategies at your own pace.</p>
     </div>
     <div class="why-card">
       <div class="why-icon">🗣️</div>
@@ -542,12 +675,12 @@
     <div class="why-card">
       <div class="why-icon">👤</div>
       <h3>Personal 1-to-1 Guidance</h3>
-      <p>Individual sessions tailored to your pace and doubts. Not just lectures — real mentorship with personalized support throughout.</p>
+      <p>Every session is completely personalized to you. Not just lectures — real mentorship where the pace and depth are adjusted based on your progress and questions.</p>
     </div>
     <div class="why-card">
-      <div class="why-icon">💬</div>
-      <h3>WhatsApp Learning Support</h3>
-      <p>Your queries answered within 24 hours via WhatsApp. Continuous learning support even between live sessions.</p>
+      <div class="why-icon">📊</div>
+      <h3>Live Trade Support (Post-Course)</h3>
+      <p>After completing the course, you get direct live trade support — real-time guidance as you apply your knowledge in actual market conditions with confidence.</p>
     </div>
     <div class="why-card">
       <div class="why-icon">🏆</div>
@@ -556,8 +689,52 @@
     </div>
     <div class="why-card">
       <div class="why-icon">📅</div>
-      <h3>Weekend Batch Convenience</h3>
-      <p>Saturday and Sunday classes, 2 hours each session — designed for working professionals and students with busy weekday schedules.</p>
+      <h3>Saturday & Sunday Only</h3>
+      <p>Just 1 month, 8 classes — every Saturday and Sunday. Perfect for working professionals and students who cannot attend on weekdays. Finish the full course in 4 weekends.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT YOU WILL ACHIEVE -->
+<section class="outcomes-section" id="outcomes">
+  <div class="section-label">What You Will Achieve</div>
+  <h2 class="section-title">After This Course, <em style="font-style:normal;color:var(--gold)">You Will…</em></h2>
+  <p class="section-sub">This is not just theory. By the end of your 1-to-1 mentoring, these are the real skills you will carry into the market.</p>
+
+  <div class="outcomes-grid">
+    <div class="outcome-card">
+      <div class="outcome-num">01</div>
+      <div class="outcome-icon">📈</div>
+      <h3>Predict Market Trends with Confidence</h3>
+      <p>You will read charts clearly and identify the direction of the market — whether it is trending up, down, or moving sideways — before you enter any trade.</p>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-num">02</div>
+      <div class="outcome-icon">🎯</div>
+      <h3>Trade with 1:3 Risk-Reward Discipline</h3>
+      <p>Every trade you take will follow a structured 1:3 risk-reward approach. Risk small, aim big — you will know exactly where to place your stop loss and your targets before entering.</p>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-num">03</div>
+      <div class="outcome-icon">💎</div>
+      <h3>Select Only Quality Trades</h3>
+      <p>You will stop overtrading. You will learn to wait for 1 or 2 high-quality setups per day — trades that meet all your criteria — and ignore the noise.</p>
+    </div>
+    <div class="outcome-card">
+      <div class="outcome-num">04</div>
+      <div class="outcome-icon">🧠</div>
+      <h3>No More Fear of Charts & Candles</h3>
+      <p>Charts and candlestick patterns will become your friends. You will read price action naturally and play the market with full understanding — not fear or confusion.</p>
+    </div>
+  </div>
+
+  <!-- LIVE SUPPORT BANNER -->
+  <div class="live-support-banner">
+    <div class="lsb-icon">🟢</div>
+    <div class="lsb-body">
+      <div class="lsb-badge">Post-Course Benefit</div>
+      <h3>Live Trade Support — Even After You Graduate</h3>
+      <p>Your learning doesn't stop when the course ends. After completing the program, you get access to live trade support from Janakiram directly — real-time guidance as you apply your skills in actual market hours. You will never feel alone while navigating the markets.</p>
     </div>
   </div>
 </section>
@@ -566,7 +743,7 @@
 <section id="curriculum">
   <div class="section-label">What You Will Learn</div>
   <h2 class="section-title">Complete Course <em style="font-style:normal;color:var(--gold)">Curriculum</em></h2>
-  <p class="section-sub">Five comprehensive modules spanning 8 weeks, covering everything from market basics to real-world analysis techniques.</p>
+  <p class="section-sub">Five comprehensive modules across 8 classes in 1 month — Saturday & Sunday only — covering everything from market basics to advanced trading strategies through personalized 1-to-1 sessions.</p>
   <div class="curriculum-list">
     <div class="cur-item">
       <div class="cur-num">01</div>
@@ -579,7 +756,7 @@
       <div class="cur-num">02</div>
       <div class="cur-body">
         <h3>📈 Technical Analysis</h3>
-        <p>Learn to read charts, interpret candlestick patterns, apply technical indicators, and identify market trends using practical, real-time demos.</p>
+        <p>Learn to read charts, interpret candlestick patterns, apply technical indicators, and identify market trends using practical, real-time demos on TradingView and Zerodha Kite.</p>
       </div>
     </div>
     <div class="cur-item">
@@ -592,15 +769,65 @@
     <div class="cur-item">
       <div class="cur-num">04</div>
       <div class="cur-body">
-        <h3>🔴 Market Practice Sessions</h3>
-        <p>Observe how trades are analyzed and decisions structured in live market conditions — practical exposure to apply your theoretical learning.</p>
+        <h3>🔴 Advanced Trading & Market Practice</h3>
+        <p>Progress into advanced strategies, trend identification, quality trade selection, and risk-reward application. Observe how trades are analyzed in live market conditions through practical exposure sessions.</p>
       </div>
     </div>
     <div class="cur-item">
       <div class="cur-num">05</div>
       <div class="cur-body">
-        <h3>👤 1-to-1 Guidance & Doubt Sessions</h3>
-        <p>Personal sessions for concept clarity and doubt resolution. Individualized attention ensures you progress at your own pace with confidence.</p>
+        <h3>👤 1-to-1 Guidance, Doubt Sessions & Live Support</h3>
+        <p>Personal sessions for concept clarity and doubt resolution throughout the course. Post-course live trade support continues your mentoring even after graduation — ensuring you trade with real confidence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- YOUR JOURNEY -->
+<section class="journey-section">
+  <div class="section-label">Your Learning Journey</div>
+  <h2 class="section-title">From Day One to <em style="font-style:normal;color:var(--gold)">Live Markets</em></h2>
+  <p class="section-sub">A clear path from complete beginner to confident, disciplined trader — with support at every step.</p>
+
+  <div class="journey-steps">
+    <div class="journey-step active">
+      <div class="journey-dot">📖</div>
+      <div class="journey-body">
+        <div class="journey-tag tag-during">Weekend 1 · Sat & Sun · Class 1 & 2</div>
+        <h3>Market Foundations</h3>
+        <p>Start from scratch — no prior knowledge needed. Understand how NSE, BSE, Nifty, and Sensex work. Learn why markets move and how to read basic price action.</p>
+      </div>
+    </div>
+    <div class="journey-step active">
+      <div class="journey-dot">📊</div>
+      <div class="journey-body">
+        <div class="journey-tag tag-during">Weekend 2 · Sat & Sun · Class 3 & 4</div>
+        <h3>Charts & Technical Analysis</h3>
+        <p>Candlestick patterns, support and resistance, trend identification, and indicators. Charts stop being confusing — they start telling you a story.</p>
+      </div>
+    </div>
+    <div class="journey-step active">
+      <div class="journey-dot">🎯</div>
+      <div class="journey-body">
+        <div class="journey-tag tag-during">Weekend 3 · Sat & Sun · Class 5 & 6</div>
+        <h3>Options & Advanced Strategies</h3>
+        <p>Calls, puts, Greeks, and advanced setups. You learn to structure trades with a clear 1:3 risk-reward plan — stop loss defined, targets set, before entering.</p>
+      </div>
+    </div>
+    <div class="journey-step active">
+      <div class="journey-dot">💎</div>
+      <div class="journey-body">
+        <div class="journey-tag tag-during">Weekend 4 · Sat & Sun · Class 7 & 8</div>
+        <h3>Quality Trade Selection & Final Practice</h3>
+        <p>Stop overtrading. Learn to identify 1–2 high-quality setups per session — entries that meet all criteria. Patience and discipline become your biggest edge.</p>
+      </div>
+    </div>
+    <div class="journey-step">
+      <div class="journey-dot">🟢</div>
+      <div class="journey-body">
+        <div class="journey-tag tag-after">Post-Course · Ongoing</div>
+        <h3>Live Trade Support with Janakiram</h3>
+        <p>After you complete the course, live support continues. Real-time guidance during market hours as you apply your skills — so you never feel alone in the markets.</p>
       </div>
     </div>
   </div>
@@ -610,20 +837,23 @@
 <section class="pricing-section" id="enroll">
   <div class="section-label">Course Fee</div>
   <h2 class="section-title">Private Mentoring <em style="font-style:normal;color:var(--gold)">Program</em></h2>
-  <p class="section-sub">One comprehensive package that includes everything you need for a complete stock market education.</p>
+  <p class="section-sub">One comprehensive package — beginner to advanced — with live trade support after completion.</p>
   <div class="pricing-card">
-    <div class="pricing-tag">Private Mentoring · 1-to-1</div>
+    <div class="pricing-tag">Private Mentoring · 1-to-1 · Beginner to Advanced</div>
     <h2>Complete Trading Course</h2>
-    <p style="color:var(--muted);font-size:0.9rem;">8 Weeks · 16 Sessions · Weekend Classes</p>
+    <p style="color:var(--muted);font-size:0.9rem;">1 Month · 8 Classes · Saturday & Sunday Only · Post-Course Live Support</p>
     <div class="price">
-      <sup>₹</sup>24,999 <span class="period">/ full course</span>
+      <sup>₹</sup>10,000 <span class="period">/ full course</span>
     </div>
     <ul class="features-list">
-      <li>16 Live Interactive Sessions</li>
-      <li>1-to-1 Personal Guidance</li>
+      <li>8 Live 1-to-1 Classes (Sat & Sun · 4 Weekends)</li>
+      <li>Beginner to Advanced Level Coverage</li>
       <li>Comprehensive Study Material</li>
       <li>WhatsApp Support (24hr response)</li>
       <li>Market Practice Demonstrations</li>
+      <li class="highlight">🔥 Live Trade Support After Course Completion</li>
+      <li class="highlight">🔥 Learn to Predict Trends & Trade 1:3 RR</li>
+      <li class="highlight">🔥 Quality Trade Selection (1–2 Setups/Day)</li>
       <li>Certificate of Completion</li>
       <li>Open to Ages 18–60</li>
       <li>Telugu / Tamil / Kannada / English Medium</li>
@@ -641,8 +871,8 @@
       <div class="about-card-main">
         <div class="about-avatar">J</div>
         <h3>Janakiram</h3>
-        <div class="role">Financial Markets Educator</div>
-        <p>Over a decade of hands-on experience in equity, derivatives, and commodities markets — now dedicated to educating retail learners across South India.</p>
+        <div class="role">Financial Markets Educator & Trading Mentor</div>
+        <p>Over a decade of hands-on experience in equity, derivatives, and commodities markets — now dedicated to educating retail learners across South India through personalized 1-to-1 mentoring.</p>
         <div class="about-langs">
           <span class="lang-tag">Telugu</span>
           <span class="lang-tag">Tamil</span>
@@ -654,27 +884,27 @@
     <div class="about-text">
       <div class="section-label">About the Educator</div>
       <h2 class="section-title">Learning Guided by <em style="font-style:normal;color:var(--gold)">Real Experience</em></h2>
-      <p class="section-sub">Janakiram brings over 10 years of practical financial markets experience into an accessible, structured educational program for retail learners.</p>
+      <p class="section-sub">Janakiram brings over 10 years of practical financial markets experience into an accessible, structured 1-to-1 mentoring program for retail learners at all levels.</p>
       <div class="about-points">
         <div class="about-point">
           <div class="about-point-icon">📊</div>
           <div>
-            <h4>Equity & Derivatives Background</h4>
-            <p>Practical experience across equity, derivatives, and commodities markets — not just theory.</p>
-          </div>
-        </div>
-        <div class="about-point">
-          <div class="about-point-icon">🗣️</div>
-          <div>
-            <h4>Multi-Language Educator</h4>
-            <p>Educational content delivered across Telugu, Tamil, Kannada, and English platforms for wider accessibility.</p>
+            <h4>Equity, Derivatives & Commodities Background</h4>
+            <p>Practical live-market experience across equities, options, and MCX commodities — not just classroom theory.</p>
           </div>
         </div>
         <div class="about-point">
           <div class="about-point-icon">🎯</div>
           <div>
-            <h4>Retail Learner Focused</h4>
-            <p>Curriculum designed specifically for beginners and retail learners — no prior finance background needed.</p>
+            <h4>From Beginner to Advanced — One Program</h4>
+            <p>The 1-to-1 format means the course is tailored entirely to where you are — and takes you all the way to advanced trading skills.</p>
+          </div>
+        </div>
+        <div class="about-point">
+          <div class="about-point-icon">🟢</div>
+          <div>
+            <h4>Post-Course Live Trade Support</h4>
+            <p>Mentoring continues after graduation — real-time live trade support so students apply what they've learned with confidence in actual market hours.</p>
           </div>
         </div>
       </div>
@@ -697,18 +927,18 @@
 <section class="contact-section">
   <div class="section-label">Get In Touch</div>
   <h2 class="section-title">Ready to Start <em style="font-style:normal;color:var(--gold)">Learning?</em></h2>
-  <p class="section-sub" style="margin:0 auto;">New batch is enrolling now. WhatsApp us to register your seat and get complete course details instantly.</p>
+  <p class="section-sub" style="margin:0 auto;">New batch enrolling now. 8 classes across 4 weekends (Saturday & Sunday only) — complete in just 1 month. WhatsApp to secure your seat.</p>
   <a href="https://wa.me/918328396964?text=Hi%2C%20I%20am%20interested%20in%20the%20Janakiram%20Trading%20Course.%20Please%20share%20enrollment%20details." class="whatsapp-btn" target="_blank" rel="noopener">
     <span class="wa-icon">💬</span> WhatsApp to Register Now
   </a>
-  <p class="contact-note">We respond within a few hours · Ages 18–60 welcome</p>
+  <p class="contact-note">We respond within a few hours · Ages 18–60 welcome · Sat & Sun only · 1 Month</p>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="footer-logo">Janakiram Trading</div>
   <div class="footer-note">© 2025 Janakiram Trading. All rights reserved.</div>
-  <div class="footer-disc">Educational content only. Not SEBI registered. Does not provide investment advice or profit guarantees. Trading involves market risk.</div>
+  <div class="footer-disc">Educational content only. Does not provide investment advice or profit guarantees. Trading involves market risk. Please invest responsibly.</div>
 </footer>
 
 </body>
